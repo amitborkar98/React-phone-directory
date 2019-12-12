@@ -8,21 +8,16 @@ class App extends Component {
     alert(message);
   }
 
+  constructor()
+  {
+    super();
+    this.state = {
+      subscribersListToShow: []
+    }
+  }
   render (){
-    let subscribers = [
-      {
-        id: 1,
-        name: "XY",
-        phone: "8888888888"
-      },
-      {
-        id: 2,
-        name: "AB",
-        phone: "9999999999"
-      }
-    ];
     return(
-    <div >
+    <div  >
       <Header heading="Phone Directory"/>
       <div className="component-body-container">
         <button className="custom-btn add-btn">Add</button>
@@ -31,7 +26,7 @@ class App extends Component {
           <span className="grid-item">Phone</span>
         </div>
         {
-          subscribers.map(sub => {
+          this.state.subscribersListToShow.map(sub => {
             return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>

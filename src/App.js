@@ -18,16 +18,16 @@ class App extends Component {
     ];
     return(
     <div >
-      <Header/>
+      <Header heading="Phone Directory"/>
       <div className="component-body-container">
         <button className="custom-btn add-btn">Add</button>
         <div className="grid-container ">
-          <span className="grid-item ">Name</span><br/>
-          <span className="grid-item ">Phone</span>
+          <span className="grid-item">Name</span>
+          <span className="grid-item">Phone</span>
         </div>
         {
-            subscribers.map(sub => {
-              return <div key={sub.id} className="grid-container">
+          subscribers.map(sub => {
+            return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
                 <button className="custom-btn del">Delete</button>

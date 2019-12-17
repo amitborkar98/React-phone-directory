@@ -1,3 +1,10 @@
+### Overview
+
+Simple React phone directory project for adding and delete subscriber.
+
+# Tools Used:
+React,Jacasvript,Css.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

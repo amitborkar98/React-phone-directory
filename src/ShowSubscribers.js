@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import Header from "./Header";
-import './App.css'
+import './ShowSubscribers.css'
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-  clickHandler(message){
-    alert(message);
-  }
-
-  constructor()
-  {
-    super();
-    this.state = {
-      subscribersListToShow: []
-    }
-  }
+  
   render (){
     return(
     <div  >
@@ -26,11 +16,11 @@ class App extends Component {
           <span className="grid-item">Phone</span>
         </div>
         {
-          this.state.subscribersListToShow.map(sub => {
+          this.props.subscriberList.map(sub => {
             return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
-                <button className="custom-btn del" onClick={this.clickHandler.bind(this,"Delete Clicked")}>Delete</button>
+                <button className="custom-btn del">Delete</button>
               </div>
             })
         }
@@ -40,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;

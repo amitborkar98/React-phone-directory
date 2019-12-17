@@ -21,6 +21,11 @@ class AddSubsriber extends Component{
         console.log(this.state);
     }
 
+    onFormSubmitted = (e) => {
+        e.preventDefault();
+        this.props.addSubsriberHandler(this.state);
+        this.setState({id: 0, name: '', phone: ''});
+    }
     render(){
         const {name, phone} = this.state;
         return(
@@ -28,7 +33,7 @@ class AddSubsriber extends Component{
                 <Header heading="Add Subscriber"/>
                 <div className="component-body-container">
                     <button className="custom-btn">Back</button>
-                    <form className="subscriber-form">
+                    <form className="subscriber-form" onSubmit={this.onFormSubmitted.bind(this)}>
                         <label htmlFor="name" className="label-control">Name</label><br/>
                         <input id="name" type="text" name="name" className="input-control" onChange={this.inputChangeHandler}/><br/><br/>
                         <label htmlFor="phone" className="label-control">Phone</label><br/>
